@@ -5,26 +5,26 @@ using UnityEngine;
 public class CardManeger : MonoBehaviour
 {
     public GameObject[] cardPrefabs;
-    int x = 0;
-
+    
     public int cardNumber=3;
     
     public void AddCard()
     {
-
+        int carPositionX = 0;
         for (int i = 0; i < cardNumber; i++)
         {
+            
+
             int cardIndex = Random.Range(0, cardPrefabs.Length);
-            cardIndex = Random.Range(0, cardPrefabs.Length);
-            Instantiate(cardPrefabs[cardIndex], new Vector2(x, -3), cardPrefabs[cardIndex].transform.rotation);
-            if (x < 0)
+            Instantiate(cardPrefabs[cardIndex], new Vector2(carPositionX, -3), cardPrefabs[cardIndex].transform.rotation);
+            if (carPositionX < 0)
             {
-                x = x * -1;
+                carPositionX = carPositionX * -1;
             }
             else
             {
-                x += 2;
-                x = x * -1;
+                carPositionX += 2;
+                carPositionX = carPositionX * -1;
             }
         }
 
