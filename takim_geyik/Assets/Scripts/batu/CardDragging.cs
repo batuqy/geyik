@@ -19,6 +19,6 @@ public class CardDragging : MonoBehaviour
     private void OnMouseDrag()
     {
         transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - differnce;
-        //lerpmerp
+       // transform.position = Vector2.Lerp(s);
     }
 }
