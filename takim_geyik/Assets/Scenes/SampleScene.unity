@@ -1269,7 +1269,7 @@ GameObject:
   - component: {fileID: 993184081}
   m_Layer: 5
   m_Name: Slider
-  m_TagString: Untagged
+  m_TagString: Slider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1341,10 +1341,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 864972771}
   m_HandleRect: {fileID: 252225440}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: -10
+  m_MinValue: -50
+  m_MaxValue: -20
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -30
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2192,7 +2192,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 89f22fe7cb6b46346b213dfe722c264f, type: 2}
-  SoundOpen: 1
 --- !u!114 &1873571225
 MonoBehaviour:
   m_ObjectHideFlags: 0

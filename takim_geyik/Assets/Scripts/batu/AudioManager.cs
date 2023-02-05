@@ -28,6 +28,7 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
             s.source.mute = s.mute;
+           // s.source.outputAudioMixerGroup = s.audioMixer;
         }
     }
 
@@ -45,4 +46,5 @@ public class AudioManager : MonoBehaviour
     {
         Play("MainMenuMusic");
     }
+    
 }
