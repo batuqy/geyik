@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+[System.Serializable]
 public class TileBlock
 {
 
@@ -10,25 +11,36 @@ public class TileBlock
     public bool isBuilded;
 
     public Vector3Int tilePos;
-    private TileBase tileBase;
+    public TileBase tileBase;
 
     public TileBlock leftBlock;
     public TileBlock rightBlock;
     public TileBlock upBlock;
     public TileBlock downBlock;
 
+    public TileBlockNameSpace.TileBlockType TileBlockType;
+
+    public ResourceNameSpace.ResourceType tileResourceType;
+
     public Tilemap attachedTilemap;
 
-    private Tile tile;
+    public Tile tile;
 
-    private Color32 tileColor;
+    public Color32 tileColor;
 
-    public TileBlock(Vector3Int tilePos, TileBase tileBase, Tile tile, Tilemap attachedTileMap)
-    {
+    public TileBlock(Vector3Int tilePos, TileBase tileBase, Tile tile, Tilemap attachedTileMap, TileBlockNameSpace.TileBlockType tileBlockType)
+    {   
         this.attachedTilemap = attachedTileMap;
         this.tileBase = tileBase;
         this.tilePos = tilePos;
         this.tileColor = tile.color;
+        this.TileBlockType = tileBlockType;
+
+        if (tileBlockType == TileBlockNameSpace.TileBlockType.FRIENDLY)
+        {
+            SetResource();
+        }
+        
     }
 
     void Select()
@@ -168,6 +180,30 @@ public class TileBlock
 
 
 
+    public void SetResource() {
+        int resourceIndex = Random.Range(0, 4);
+        if (resourceIndex == 0)
+        {
+            tileResourceType = ResourceNameSpace.ResourceType.LIGHT;
+        }
+        else if (resourceIndex == 1)
+        {
+            tileResourceType = ResourceNameSpace.ResourceType.MAGIC;
+        }
+        else if (resourceIndex == 2) {
+
+            tileResourceType = ResourceNameSpace.ResourceType.WORSHIPPER;
+        }
+
+        else if (resourceIndex == 3)
+        {
+            tileResourceType = ResourceNameSpace.ResourceType.WATER;
+
+        }
+
+
+
+    }
 
 
 
